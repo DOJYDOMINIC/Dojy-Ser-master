@@ -34,10 +34,57 @@ class _ShopListScreenState extends State<ShopListScreen> {
 
     return SafeArea(
       child: Scaffold(
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              UserAccountsDrawerHeader(
+                decoration: BoxDecoration(color:ShopButton),
+                currentAccountPicture: CircleAvatar(
+                    radius: 45,backgroundColor: Colors.white,
+                    child: CircleAvatar(
+                        radius: 33,
+                        backgroundImage: NetworkImage('https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80'))),
+                  accountName: Text("Angelina",style: fontsize1,), accountEmail: Text('')),
+              ListTile(
+                title:ListTile(
+                  leading: Icon(Icons.home),
+                  title: Text('Home'),
+                ),
+                onTap: () {
+                  // do something
+                },
+              ),
+              ListTile(
+                title:ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text('Settings'),
+                ),
+                onTap: () {
+                  // do something
+                },
+              ),Spacer(),
+              ListTile(
+                title:ListTile(
+                  leading: Icon(Icons.settings),
+                  title: Text('Settings'),
+                ),
+                onTap: () {
+                  // do something
+                },
+              ),
+            ],
+          ),
+        ),
         resizeToAvoidBottomInset: false,
         floatingActionButton: FloatingActionButton(
           backgroundColor: ShopButton,
           onPressed: () => showModalBottomSheet(
+            shape: const RoundedRectangleBorder( // <-- SEE HERE
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(25.0),
+              ),
+            ),
             context: context,
             builder: (context) => Container(
               child: Padding(
@@ -95,7 +142,7 @@ class _ShopListScreenState extends State<ShopListScreen> {
 
                           Navigator.pop(context);
                         },
-                        child: Text('Add Your shop'),
+                        child: Text('Add shop'),
                       ),
                     ),
                   ],
@@ -121,7 +168,7 @@ class _ShopListScreenState extends State<ShopListScreen> {
                   title: Text(
                     "SHOPS",
                     style: TextStyle(
-                        color: Colors.black,
+                        color: Colors.white,
                         fontSize: 16.0,
                         fontWeight: FontWeight.bold),
                   ), //Text
@@ -134,26 +181,26 @@ class _ShopListScreenState extends State<ShopListScreen> {
                   ), //FlexibleSpaceBar
               expandedHeight: 220,
               backgroundColor: ShopButtonlight,
-              leading: IconButton(
-                icon: Icon(Icons.menu),
-                tooltip: 'Menu',
-                color: Colors.white,
-                onPressed: () {},
-              ), //IconButton
-              actions: <Widget>[
-                IconButton(
-                  icon: Icon(Icons.comment),
-                  tooltip: 'Comment Icon',
-                  color: Colors.white,
-                  onPressed: () {},
-                ), //IconButton
-                IconButton(
-                  icon: Icon(Icons.settings),
-                  tooltip: 'Setting Icon',
-                  color: Colors.white,
-                  onPressed: () {},
-                ), //IconButton
-              ], //<Widget>[]
+              // leading: IconButton(
+              //   icon: Icon(Icons.menu),
+              //   tooltip: 'Menu',
+              //   color: Colors.white,
+              //   onPressed: () {},
+              // ), //IconButton
+              // actions: <Widget>[
+              //   IconButton(
+              //     icon: Icon(Icons.comment),
+              //     tooltip: 'Comment Icon',
+              //     color: Colors.white,
+              //     onPressed: () {},
+              //   ), //IconButton
+              //   IconButton(
+              //     icon: Icon(Icons.settings),
+              //     tooltip: 'Setting Icon',
+              //     color: Colors.white,
+              //     onPressed: () {},
+              //   ), //IconButton
+              // ], //<Widget>[]
             ),
             SliverList(
               delegate: SliverChildBuilderDelegate(

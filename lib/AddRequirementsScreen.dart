@@ -40,6 +40,7 @@ class _AddRequirementsScreenState extends State<AddRequirementsScreen> {
                       child: Column(
                         children: [
                           TextField(
+
                             decoration: const InputDecoration(
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
@@ -142,18 +143,21 @@ class _AddRequirementsScreenState extends State<AddRequirementsScreen> {
           height: double.infinity,
           child: Column(
             children: [
-              Container(
-                height: 50,
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment:MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Name',style:fontsize1),
-                      Text('Nos',style:fontsize1),
-                      Text('Price',style:fontsize1),
-                      Text('Total',style:fontsize1)
-                    ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Container(
+                  height: 50,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment:MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(child: Text('Name',style:fontsize1)),
+                        Expanded(child: Text('Nos',style:fontsize1)),
+                        Expanded(child: Text('Price',style:fontsize1)),
+                        Expanded(child: Text('Total',style:fontsize1))
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -170,80 +174,87 @@ class _AddRequirementsScreenState extends State<AddRequirementsScreen> {
                         shopsList[widget.shopIndex]['Requirements'][index].rate;
                     return SizedBox(
                       height: 80,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          border:
-                              Border.all(color: Colors.black.withOpacity(.1)),
-                          color: Colors.white,
-                        ),
-                        // child: ListTile(
-                        //
-                        //   leading: Padding(
-                        //     padding: const EdgeInsets.only(right: 50),
-                        //     child: Text(
-                        //       shopsList[widget.shopIndex]['Requirements'][index]
-                        //           .itemName
-                        //           .toString(),
-                        //       style: TextStyle(
-                        //           fontSize: 20, fontWeight: FontWeight.bold),
-                        //     ),
-                        //   ),
-                        //   title: Padding(
-                        //     padding: const EdgeInsets.only(left: 13),
-                        //     child: Text(
-                        //       shopsList[widget.shopIndex]['Requirements'][index]
-                        //           .qty
-                        //           .toString(),
-                        //       style: TextStyle(fontSize: 20),
-                        //     ),
-                        //   ),
-                        //   trailing: Text(
-                        //     '$totalItemRate',
-                        //     style: TextStyle(fontSize: 20),
-                        //   ),
-                        //
-                        // ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10,right: 10),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border:
+                                Border.all(color: Colors.black.withOpacity(.1)),
+                            color: Colors.white,
+                          ),
+                          // child: ListTile(
+                          //
+                          //   leading: Padding(
+                          //     padding: const EdgeInsets.only(right: 50),
+                          //     child: Text(
+                          //       shopsList[widget.shopIndex]['Requirements'][index]
+                          //           .itemName
+                          //           .toString(),
+                          //       style: TextStyle(
+                          //           fontSize: 20, fontWeight: FontWeight.bold),
+                          //     ),
+                          //   ),
+                          //   title: Padding(
+                          //     padding: const EdgeInsets.only(left: 13),
+                          //     child: Text(
+                          //       shopsList[widget.shopIndex]['Requirements'][index]
+                          //           .qty
+                          //           .toString(),
+                          //       style: TextStyle(fontSize: 20),
+                          //     ),
+                          //   ),
+                          //   trailing: Text(
+                          //     '$totalItemRate',
+                          //     style: TextStyle(fontSize: 20),
+                          //   ),
+                          //
+                          // ),
 
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(right: 60),
-                              child: Text(
-                                textDirection: TextDirection.rtl,
-                                shopsList[widget.shopIndex]['Requirements'][index]
-                                    .itemName
-                                    .toString(),
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.bold),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: Text(
+                                    textDirection: TextDirection.ltr,
+                                    shopsList[widget.shopIndex]['Requirements'][index]
+                                        .itemName
+                                        .toString(),
+                                    style: TextStyle(
+                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                  ),
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 13),
-                              child: Text(
-                                textDirection: TextDirection.rtl,
-                                shopsList[widget.shopIndex]['Requirements'][index]
-                                    .qty
-                                    .toString(),
-                                style: TextStyle(fontSize: 20),
+                              Expanded(
+                                child: Text(
+                                  textDirection: TextDirection.ltr,
+                                  shopsList[widget.shopIndex]['Requirements'][index]
+                                      .qty
+                                      .toString(),
+                                  style: TextStyle(fontSize: 20),
+                                ),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 13),
-                              child: Text(
-                                textDirection: TextDirection.rtl,
-                                shopsList[widget.shopIndex]['Requirements'][index]
-                                    .rate
-                                    .toString(),
-                                style: TextStyle(fontSize: 20),
+                              Expanded(
+                                child: Text(
+                                  textDirection: TextDirection.ltr,
+                                  shopsList[widget.shopIndex]['Requirements'][index]
+                                      .rate
+                                      .toString(),
+                                  style: TextStyle(fontSize: 20),
+                                ),
                               ),
-                            ),
-                            Text(
-                              '$totalItemRate',
-                              style: TextStyle(fontSize: 20),
-                            ),
-
-                          ],
+                              Expanded(
+                                child: Text(
+                                  textDirection: TextDirection.ltr,
+                                  '$totalItemRate',
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(fontSize: 20,),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     );
@@ -251,12 +262,29 @@ class _AddRequirementsScreenState extends State<AddRequirementsScreen> {
                 ),
               ),
               Expanded(
-                flex:3,
+                flex:5,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: AmountContainer(),
+                  child: Column(
+                    children: [
+                      AmountContainer(),
+                      SizedBox(height: 10,),
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          child: Text('BUY'),
+                          style: ElevatedButton.styleFrom(
+                            primary: ShopButton,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               )
+
             ],
           ),
         ));

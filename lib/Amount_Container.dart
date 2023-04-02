@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Add_to_cart.dart';
 import 'constant.dart';
 
 class AmountContainer extends StatefulWidget {
@@ -31,18 +32,36 @@ class _AmountContainerState extends State<AmountContainer> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "Amount ",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black),
+                  Row(
+mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Amount ",
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black),
+                      ),
+            SizedBox(width:MediaQuery.of(context).size.width* .52),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder:(context)=>Addtocart()));
+              },
+              child: Container(
+                height: 40,
+                width: 40,
+                color: Colors.grey.shade200,
+                  child: Icon(Icons.add_shopping_cart_outlined,color: ShopButton,size: 30,)),
+            )
+
+                    ],
                   ),
                 ],
               ),
             ),
+            SizedBox(height: 15,),
             Padding(
-              padding: const EdgeInsets.all(15),
+              padding: const EdgeInsets.only(top: 10,left: 10,right: 10),
               child: Column(
                 children: [
                   Row(
@@ -56,7 +75,7 @@ class _AmountContainerState extends State<AmountContainer> {
                             color: Shoptext),
                       ),
                       Text(
-                        "",
+                        "120",
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
@@ -78,7 +97,7 @@ class _AmountContainerState extends State<AmountContainer> {
                             color: Shoptext),
                       ),
                       Text(
-                        "",
+                        "12",
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
@@ -100,7 +119,7 @@ class _AmountContainerState extends State<AmountContainer> {
                             color: Shoptext),
                       ),
                       Text(
-                        "15",
+                        "5",
                         style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
@@ -127,9 +146,9 @@ class _AmountContainerState extends State<AmountContainer> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "Shipping : ",
+                        "Total : ",
                         style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 20,
                             fontWeight: FontWeight.w500,
                             color: Shoptext),
                       ),
