@@ -182,34 +182,6 @@ class _AddRequirementsScreenState extends State<AddRequirementsScreen> {
                                 Border.all(color: Colors.black.withOpacity(.1)),
                             color: Colors.white,
                           ),
-                          // child: ListTile(
-                          //
-                          //   leading: Padding(
-                          //     padding: const EdgeInsets.only(right: 50),
-                          //     child: Text(
-                          //       shopsList[widget.shopIndex]['Requirements'][index]
-                          //           .itemName
-                          //           .toString(),
-                          //       style: TextStyle(
-                          //           fontSize: 20, fontWeight: FontWeight.bold),
-                          //     ),
-                          //   ),
-                          //   title: Padding(
-                          //     padding: const EdgeInsets.only(left: 13),
-                          //     child: Text(
-                          //       shopsList[widget.shopIndex]['Requirements'][index]
-                          //           .qty
-                          //           .toString(),
-                          //       style: TextStyle(fontSize: 20),
-                          //     ),
-                          //   ),
-                          //   trailing: Text(
-                          //     '$totalItemRate',
-                          //     style: TextStyle(fontSize: 20),
-                          //   ),
-                          //
-                          // ),
-
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -275,7 +247,7 @@ class _AddRequirementsScreenState extends State<AddRequirementsScreen> {
                         child: ElevatedButton(
                           child: Text('BUY'),
                           style: ElevatedButton.styleFrom(
-                            primary: ShopButton,
+                            backgroundColor : ShopButton,
                           ),
                           onPressed: () {},
                         ),

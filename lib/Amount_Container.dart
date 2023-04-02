@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'Add_to_cart.dart';
 import 'constant.dart';
 
@@ -13,6 +12,7 @@ class AmountContainer extends StatefulWidget {
 }
 
 class _AmountContainerState extends State<AmountContainer> {
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -153,7 +153,7 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             color: Shoptext),
                       ),
                       Text(
-                        "100.00",
+                        '10',
                         style: TextStyle(
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
